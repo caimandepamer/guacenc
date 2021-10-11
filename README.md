@@ -55,24 +55,3 @@ done
 
 ***
 
-# Dockerbuild  _(en proceso)_
-
-```Bach
-FROM debian:stable-backports
-
-guacamole-server-1.3.0.tar.gz
-
-RUN apt install -y build-essential libcairo2-dev libjpeg62-turbo-dev libpng-dev libtool-bin libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libpango1.0-dev libssh2-1-dev libvncserver-dev libtelnet-dev libssl-dev libvorbis-dev libwebp-dev libpulse-dev
-
-tar zxvf guacamole-server-1.3.0.tar.gz
-cd guacamole-server-1.3.0/
-./configure --disable-guacd --disable-guaclog --disable-kubernetes --with-init-dir=/etc/init.d
-make
-make install
-ldconfig
-export LC_ALL="en_US.UTF-8"
-/usr/local/bin/convert.sh
-chmod +x /usr/local/bin/convert.sh
-
- ENTRYPOINT ["/usr/local/bin/convert.sh"]
-```
