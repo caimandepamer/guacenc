@@ -1,8 +1,11 @@
 
 # guacenc  codificador  de videos  GUACAMOLE
 
-### Imagen en: 
-_docker push caimandepamer/guacen:02_
+### Descargar imagen Docker: 
+`# docker pull caimandepamer/guacenc:02`
+
+## Imagen en DockerHub: [caimandepamer - GUACENC](https://hub.docker.com/repository/docker/caimandepamer/guacenc)
+
 
 ### Volumenes 
 * Directorio '/record' debe ser montado y contener los archivos de grabacion sin codificar
