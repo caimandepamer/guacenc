@@ -16,10 +16,16 @@
 ### Modo de Ejecucion:
 ` # docker run --rm  -v $(pwd)/record:/record --name guacenc01  caimandepamer/guacenc:02 `
 
+## El contenedor comenzara a convertir cada video y luego movera el archivo original y el video generado al directorio _"record/converted"_
+![EjecudcionGuacenc](https://github.com/caimandepamer/guacenc/raw/main/Selection_119.png)
+
+
 ### Resultado:
 
 En el directorio _"record/converted"_ se guardan los archivos de video codificados _(extencion .m4v)_ y los archivos originales.
 
+## El video puede ser reproducido:
+![ReproduccionVideo](https://github.com/caimandepamer/guacenc/raw/main/Selection_118.png)
 
 ## Script en el contenedor que hace la conversion:
 
