@@ -1,13 +1,16 @@
 
 # guacenc  codificador  de videos  GUACAMOLE
 
+### Imagen en: 
+_docker push caimandepamer/guacen:02_
+
 ### Volumenes 
 * Directorio '/record' debe ser montado y contener los archivos de grabacion sin codificar
 
 ### Variables de entorno (opcionales)
 * variables de entorno: size _(por defecto 1920x1080)_  y  bits _(por defecto 2000000)_.
 
-### Ejecucion:
+### Modo de Ejecucion:
 ` # docker run --rm  -v $(pwd)/record:/record --name guacenc01  caimandepamer/guacenc:02 `
 
 ### Resultado:
@@ -15,7 +18,7 @@
 En el directorio _"record/converted"_ se guardan los archivos de video codificados _(extencion .m4v)_ y los archivos originales.
 
 
-## Ejecucion interna:
+## Script en el contenedor que hace la conversion:
 
 > ENTRYPOINT: /usr/local/bin/convert.sh
 
