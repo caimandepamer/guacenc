@@ -45,7 +45,7 @@ if [ "$bits" == "" ] ; then
 fi
 #========== eval if /record/converted exists ===
 WORK=/record
-if [ ! -d "$WORK" ]; then echo "No esta mintado /record";exit 1; fi
+if [ ! -d "$WORK" ]; then echo "No esta montado /record";exit 1; fi
 DIR=/record/converted
 if [ ! -d "$DIR" ]; then echo "creando $DIR"; mkdir -p $DIR; fi
 #=========== start the convertion of ===========
@@ -53,10 +53,12 @@ if [ ! -d "$DIR" ]; then echo "creando $DIR"; mkdir -p $DIR; fi
 for file in $(ls $WORK | grep -v converted | grep -vE  ".m4v$"); do
 	echo "/usr/local/bin/guacenc -s $size -r $bits $WORK/$file";
 	/usr/local/bin/guacenc -s $size -r $bits "$WORK/$file";
+	/usr/bin/ffmpeg -i "$WORK/$file".m4v "$DIR"/"$file".webm
 	mv "$WORK/$file".m4v "$DIR"/
 	mv "$WORK/$file" "$DIR"/
-	echo "$file converted."
+	echo "$file converted to m4v and webm"
 done
+
 ```
 
 ***
