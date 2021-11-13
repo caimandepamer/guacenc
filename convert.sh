@@ -11,7 +11,7 @@ if [ "$bits" == "" ] ; then
 fi
 #========== eval if /record/converted exists ===
 WORK=/record
-if [ ! -d "$WORK" ]; then echo "No esta mintado /record";exit 1; fi
+if [ ! -d "$WORK" ]; then echo "No esta montado /record";exit 1; fi
 DIR=/record/converted
 if [ ! -d "$DIR" ]; then echo "creando $DIR"; mkdir -p $DIR; fi
 #=========== start the convertion of ===========
